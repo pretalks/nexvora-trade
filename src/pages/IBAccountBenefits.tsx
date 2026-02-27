@@ -2,15 +2,20 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
-import { TrendingDown, Gift, Headphones, Wrench, Signal, Star, CheckCircle } from "lucide-react";
+import ibSpreads from "@/assets/ib-spreads.jpg";
+import ibCashback from "@/assets/ib-cashback.jpg";
+import ibSupport from "@/assets/ib-support.jpg";
+import ibEa from "@/assets/ib-ea.jpg";
+import ibSignals from "@/assets/ib-signals.jpg";
+import ibTraining from "@/assets/ib-training.jpg";
 
 const benefits = [
-  { icon: TrendingDown, title: "Lower Spreads", desc: "Get access to tighter spreads on major forex pairs, reducing your overall trading costs." },
-  { icon: Gift, title: "Cashback Rewards", desc: "Earn cashback on every trade you execute. The more you trade, the more you earn." },
-  { icon: Headphones, title: "Priority Support", desc: "Get dedicated WhatsApp support with priority response times for all trading queries." },
-  { icon: Wrench, title: "Premium EA Access", desc: "Unlock full, original versions of all our Expert Advisors at no additional cost." },
-  { icon: Signal, title: "Free Trading Signals", desc: "Receive daily trading signals and market analysis directly on WhatsApp." },
-  { icon: Star, title: "Exclusive Training", desc: "Access to exclusive webinars, tutorials, and trading education resources." },
+  { image: ibSpreads, title: "Lower Spreads", desc: "Get access to tighter spreads on major forex pairs, reducing your overall trading costs." },
+  { image: ibCashback, title: "Cashback Rewards", desc: "Earn cashback on every trade you execute. The more you trade, the more you earn." },
+  { image: ibSupport, title: "Priority Support", desc: "Get dedicated WhatsApp support with priority response times for all trading queries." },
+  { image: ibEa, title: "Premium EA Access", desc: "Unlock full, original versions of all our Expert Advisors at no additional cost." },
+  { image: ibSignals, title: "Free Trading Signals", desc: "Receive daily trading signals and market analysis directly on WhatsApp." },
+  { image: ibTraining, title: "Exclusive Training", desc: "Access to exclusive webinars, tutorials, and trading education resources." },
 ];
 
 const steps = [
@@ -42,13 +47,15 @@ const IBAccountBenefits = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass-card-elevated p-8 group hover:shadow-gold transition-all duration-300"
+                className="glass-card-elevated overflow-hidden group hover:shadow-gold transition-all duration-300"
               >
-                <div className="w-14 h-14 rounded-xl gradient-gold flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                  <b.icon size={24} className="text-primary" />
+                <div className="h-48 overflow-hidden">
+                  <img src={b.image} alt={b.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
-                <h3 className="text-lg font-heading font-semibold text-foreground mb-2">{b.title}</h3>
-                <p className="text-muted-foreground font-body text-sm leading-relaxed">{b.desc}</p>
+                <div className="p-8">
+                  <h3 className="text-lg font-heading font-semibold text-foreground mb-2">{b.title}</h3>
+                  <p className="text-muted-foreground font-body text-sm leading-relaxed">{b.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>

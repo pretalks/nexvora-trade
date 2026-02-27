@@ -9,6 +9,11 @@ import SectionHeading from "@/components/SectionHeading";
 import heroTrader from "@/assets/hero-trader.png";
 import tradingDashboard from "@/assets/trading-dashboard.png";
 import teamDiscussion from "@/assets/team-discussion.png";
+import strategyRsi from "@/assets/strategy-rsi.jpg";
+import strategyAtr from "@/assets/strategy-atr.jpg";
+import strategyZone from "@/assets/strategy-zone.jpg";
+import strategyGrid from "@/assets/strategy-grid.jpg";
+import strategyVolume from "@/assets/strategy-volume.jpg";
 
 const heroSlides = [
   {
@@ -38,11 +43,11 @@ const features = [
 ];
 
 const strategies = [
-  { name: "RSI Trap Strategy", desc: "Captures oversold/overbought reversals with smart entry timing and dynamic exit logic." },
-  { name: "ATR Based Martingale", desc: "Volatility-adjusted position sizing with controlled recovery for consistent returns." },
-  { name: "Zone Recovery", desc: "Dual-direction hedging system that recovers from adverse moves with calculated entries." },
-  { name: "Grid Cycle", desc: "Multi-level grid trading with cycle detection for range-bound and trending markets." },
-  { name: "Volume + Price Action", desc: "Combines volume analysis with price action patterns for high-probability trade entries." },
+  { name: "RSI Trap Strategy", desc: "Captures oversold/overbought reversals with smart entry timing and dynamic exit logic.", image: strategyRsi },
+  { name: "ATR Based Martingale", desc: "Volatility-adjusted position sizing with controlled recovery for consistent returns.", image: strategyAtr },
+  { name: "Zone Recovery", desc: "Dual-direction hedging system that recovers from adverse moves with calculated entries.", image: strategyZone },
+  { name: "Grid Cycle", desc: "Multi-level grid trading with cycle detection for range-bound and trending markets.", image: strategyGrid },
+  { name: "Volume + Price Action", desc: "Combines volume analysis with price action patterns for high-probability trade entries.", image: strategyVolume },
 ];
 
 const testimonials = [
@@ -103,9 +108,6 @@ const HeroSection = () => {
               <div className="flex flex-wrap gap-4">
                 <Button variant="hero" size="lg" asChild>
                   <Link to="/drop-your-idea">🔵 Submit Your Idea</Link>
-                </Button>
-                <Button variant="hero-outline" size="lg" asChild>
-                  <Link to="/free-demo-ea" className="text-primary-foreground border-primary-foreground/50 hover:bg-primary-foreground/10">🟢 Download Free Demo EA</Link>
                 </Button>
               </div>
             </motion.div>
@@ -174,14 +176,18 @@ const Index = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.4 }}
-                className="glass-card-elevated p-6 hover:shadow-gold transition-all duration-300 group"
+                className="glass-card-elevated overflow-hidden hover:shadow-gold transition-all duration-300 group"
               >
-                <div className="w-full h-2 rounded-full gradient-gold mb-5 opacity-60 group-hover:opacity-100 transition-opacity" />
-                <h3 className="text-lg font-heading font-semibold text-foreground mb-2">{s.name}</h3>
-                <p className="text-muted-foreground font-body text-sm leading-relaxed mb-4">{s.desc}</p>
-                <Button variant="gold" size="sm" asChild>
-                  <Link to="/strategies">Learn More</Link>
-                </Button>
+                <div className="h-44 overflow-hidden">
+                  <img src={s.image} alt={s.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-heading font-semibold text-foreground mb-2">{s.name}</h3>
+                  <p className="text-muted-foreground font-body text-sm leading-relaxed mb-4">{s.desc}</p>
+                  <Button variant="gold" size="sm" asChild>
+                    <Link to="/strategies">Learn More</Link>
+                  </Button>
+                </div>
               </motion.div>
             ))}
           </div>
