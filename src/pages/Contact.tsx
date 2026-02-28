@@ -15,12 +15,12 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = `*Contact Inquiry*%0A%0A*Name:* ${form.name}%0A*Email:* ${form.email}%0A*WhatsApp:* ${form.whatsapp}%0A*Message:* ${form.message}`;
-    window.open(`https://wa.me/919584463536?text=${msg}`, "_blank");
+    window.open(`https://wa.me/918141517483?text=${msg}`, "_blank");
   };
 
   return (
     <Layout>
-      <section className="pt-24 pb-8 md:pt-32 bg-muted/30">
+      <section className="pt-32 pb-8 md:pt-40 bg-muted/30">
         <div className="container-custom px-4 md:px-8">
           <SectionHeading badge="Get in Touch" title="Contact Us" subtitle="Have questions? We're here to help. Reach out via WhatsApp, email, or the contact form below." />
         </div>
@@ -34,13 +34,13 @@ const Contact = () => {
               <div>
                 <h3 className="text-2xl font-heading font-bold text-foreground mb-6">Let's Connect</h3>
                 <div className="space-y-5">
-                  <a href="https://wa.me/919584463536" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 glass-card p-5 hover:shadow-gold transition-all duration-300">
+                  <a href="https://wa.me/918141517483" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 glass-card p-5 hover:shadow-gold transition-all duration-300">
                     <div className="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center">
                       <Phone size={22} className="text-success" />
                     </div>
                     <div>
                       <p className="font-heading font-semibold text-foreground text-sm">WhatsApp</p>
-                      <p className="text-muted-foreground font-body text-sm">+91 9584463536</p>
+                      <p className="text-muted-foreground font-body text-sm">+91 8141517483</p>
                     </div>
                   </a>
                   <a href="mailto:xtrendedutech@gmail.com" className="flex items-center gap-4 glass-card p-5 hover:shadow-gold transition-all duration-300">

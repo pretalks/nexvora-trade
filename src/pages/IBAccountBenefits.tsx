@@ -26,11 +26,11 @@ const steps = [
 ];
 
 const IBAccountBenefits = () => {
-  const whatsappLink = "https://wa.me/919584463536?text=Hi%2C%20I%27m%20interested%20in%20the%20IB%20Account%20program";
+  const whatsappLink = "https://wa.me/918141517483?text=Hi%2C%20I%27m%20interested%20in%20the%20IB%20Account%20program";
 
   return (
     <Layout>
-      <section className="pt-24 pb-8 md:pt-32 bg-muted/30">
+      <section className="pt-32 pb-8 md:pt-40 bg-muted/30">
         <div className="container-custom px-4 md:px-8">
           <SectionHeading badge="IB Program" title="IB Account Benefits" subtitle="Trade smarter with our Introducing Broker partnership. Get exclusive benefits, lower costs, and premium tools." />
         </div>

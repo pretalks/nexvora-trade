@@ -17,12 +17,12 @@ const DropYourIdea = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const message = `*New EA Idea Submission*%0A%0A*Name:* ${form.name}%0A*Email:* ${form.email}%0A*WhatsApp:* ${form.whatsapp}%0A*Trading Pair:* ${form.pair}%0A*Timeframe:* ${form.timeframe}%0A*Entry Logic:* ${form.entry}%0A*SL/TP Logic:* ${form.sltp}%0A*Risk Management:* ${form.risk}%0A*Extra Notes:* ${form.notes}`;
-    window.open(`https://wa.me/919584463536?text=${message}`, "_blank");
+    window.open(`https://wa.me/918141517483?text=${message}`, "_blank");
   };
 
   return (
     <Layout>
-      <section className="pt-24 pb-8 md:pt-32 bg-muted/30">
+      <section className="pt-32 pb-8 md:pt-40 bg-muted/30">
         <div className="container-custom px-4 md:px-8">
           <SectionHeading badge="Share Your Vision" title="Drop Your Trading Idea" subtitle="Have a unique trading idea? Drop your concept below and our development team will convert it into a professional MT5 Expert Advisor." />
         </div>

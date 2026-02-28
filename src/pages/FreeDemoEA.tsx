@@ -22,11 +22,11 @@ const demoEAs = [
 ];
 
 const FreeDemoEA = () => {
-  const whatsappLink = "https://wa.me/919584463536?text=Hi%2C%20I%20want%20to%20download%20the%20Free%20Demo%20EA";
+  const whatsappLink = "https://wa.me/918141517483?text=Hi%2C%20I%20want%20to%20download%20the%20Free%20Demo%20EA";
 
   return (
     <Layout>
-      <section className="pt-24 pb-8 md:pt-32 bg-muted/30">
+      <section className="pt-32 pb-8 md:pt-40 bg-muted/30">
         <div className="container-custom px-4 md:px-8">
           <SectionHeading badge="Free Download" title="Free Demo Expert Advisors" subtitle="Experience the power of automated trading with our free demo EAs. Test on demo accounts before going live." />
         </div>
@@ -122,7 +122,7 @@ const FreeDemoEA = () => {
               ))}
             </div>
             <Button variant="hero" size="lg" asChild>
-              <a href="https://wa.me/919584463536?text=Hi%2C%20I%20want%20to%20activate%20the%20full%20EA%20version" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/918141517483?text=Hi%2C%20I%20want%20to%20activate%20the%20full%20EA%20version" target="_blank" rel="noopener noreferrer">
                 Activate Full Version
               </a>
             </Button>

@@ -50,7 +50,7 @@ const strategies = [
 const OurStrategies = () => {
   return (
     <Layout>
-      <section className="pt-24 pb-8 md:pt-32 bg-muted/30">
+      <section className="pt-32 pb-8 md:pt-40 bg-muted/30">
         <div className="container-custom px-4 md:px-8">
           <SectionHeading badge="Our Strategies" title="Battle-Tested Trading Strategies" subtitle="Each strategy is developed, backtested, and optimized by our team of expert traders and developers." />
         </div>

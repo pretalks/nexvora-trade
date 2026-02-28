@@ -15,7 +15,7 @@ const About = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-muted/30">
+      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-muted/30">
         <div className="container-custom px-4 md:px-8">
           <SectionHeading badge="About Us" title="Your Trusted Partner in Trading Automation" subtitle="X-Trend Edu Tech is a premium MT5 Expert Advisor development company committed to transforming trading ideas into powerful automated strategies." />
         </div>
