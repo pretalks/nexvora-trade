@@ -251,7 +251,7 @@ const Index = () => {
                 <Link to="/drop-your-idea">Submit Your Idea</Link>
               </Button>
               <Button variant="whatsapp" size="lg" asChild>
-                <a href="https://wa.me/919584463536?text=Hi%2C%20I%20want%20to%20start%20my%20trading%20automation%20journey" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/918141517483?text=Hi%2C%20I%20want%20to%20start%20my%20trading%20automation%20journey" target="_blank" rel="noopener noreferrer">
                   💬 Chat on WhatsApp
                 </a>
               </Button>
