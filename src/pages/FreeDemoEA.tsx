@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Download, CheckCircle, Shield, BarChart3, Zap } from "lucide-react";
 import mobileTradingImg from "@/assets/mobile-trading.png";
 import tradingDashboard from "@/assets/trading-dashboard.png";
+import { openWhatsApp, getWhatsAppUrl } from "@/lib/smartLinks";
 
 const benefits = [
   "Full-featured demo EA for MT5",
@@ -22,7 +23,8 @@ const demoEAs = [
 ];
 
 const FreeDemoEA = () => {
-  const whatsappLink = "https://wa.me/918141517483?text=Hi%2C%20I%20want%20to%20download%20the%20Free%20Demo%20EA";
+  const whatsappMessage = "Hi, I want to download the Free Demo EA";
+  const whatsappLink = getWhatsAppUrl(whatsappMessage);
 
   return (
     <Layout>
@@ -49,10 +51,8 @@ const FreeDemoEA = () => {
                   </li>
                 ))}
               </ul>
-              <Button variant="whatsapp" size="lg" asChild>
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                  <Download size={18} /> Get Free Demo EA
-                </a>
+              <Button variant="whatsapp" size="lg" onClick={() => openWhatsApp(whatsappMessage)}>
+                <Download size={18} /> Get Free Demo EA
               </Button>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
@@ -88,10 +88,8 @@ const FreeDemoEA = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="gold" size="sm" className="w-full" asChild>
-                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                    <Download size={16} /> Download Demo
-                  </a>
+                <Button variant="gold" size="sm" className="w-full" onClick={() => openWhatsApp(whatsappMessage)}>
+                  <Download size={16} /> Download Demo
                 </Button>
               </motion.div>
             ))}
@@ -121,10 +119,8 @@ const FreeDemoEA = () => {
                 </div>
               ))}
             </div>
-            <Button variant="hero" size="lg" asChild>
-              <a href="https://wa.me/918141517483?text=Hi%2C%20I%20want%20to%20activate%20the%20full%20EA%20version" target="_blank" rel="noopener noreferrer">
-                Activate Full Version
-              </a>
+            <Button variant="hero" size="lg" onClick={() => openWhatsApp("Hi, I want to activate the full EA version")}>
+              Activate Full Version
             </Button>
           </motion.div>
         </div>

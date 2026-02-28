@@ -4,6 +4,7 @@ import { Menu, X, Phone, Mail, Facebook, Instagram, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
+import { openSmartLink, openWhatsApp, getWhatsAppUrl, getSocialUrl } from "@/lib/smartLinks";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -16,9 +17,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: "https://www.instagram.com/xtrendedutech/", label: "Instagram" },
-  { icon: Facebook, href: "https://www.facebook.com/share/1GEgkEY4fW/", label: "Facebook" },
-  { icon: Send, href: "https://t.me/xtrendet", label: "Telegram" },
+  { icon: Instagram, platform: "instagram" as const, label: "Instagram" },
+  { icon: Facebook, platform: "facebook" as const, label: "Facebook" },
+  { icon: Send, platform: "telegram" as const, label: "Telegram" },
 ];
 
 const Header = () => {
@@ -58,7 +59,11 @@ const Header = () => {
             {socialLinks.map((s) => (
               <a
                 key={s.label}
-                href={s.href}
+                href={getSocialUrl(s.platform)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  openSmartLink(s.platform);
+                }}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
@@ -108,10 +113,12 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Button variant="gold" size="sm" asChild>
-              <a href="https://wa.me/918141517483?text=Hi%2C%20I%20want%20to%20know%20more%20about%20X-Trend%20Edu%20Tech" target="_blank" rel="noopener noreferrer">
-                WhatsApp Us
-              </a>
+            <Button
+              variant="gold"
+              size="sm"
+              onClick={() => openWhatsApp("Hi, I want to know more about X-Trend Edu Tech")}
+            >
+              WhatsApp Us
             </Button>
           </div>
 
@@ -148,10 +155,13 @@ const Header = () => {
                     {link.label}
                   </Link>
                 ))}
-                <Button variant="gold" size="sm" className="mt-2" asChild>
-                  <a href="https://wa.me/918141517483" target="_blank" rel="noopener noreferrer">
-                    WhatsApp Us
-                  </a>
+                <Button
+                  variant="gold"
+                  size="sm"
+                  className="mt-2"
+                  onClick={() => openWhatsApp("Hi, I want to know more about X-Trend Edu Tech")}
+                >
+                  WhatsApp Us
                 </Button>
               </nav>
             </motion.div>

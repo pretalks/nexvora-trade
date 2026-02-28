@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { openWhatsApp, openSmartLink, getWhatsAppUrl } from "@/lib/smartLinks";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", whatsapp: "", message: "" });
@@ -14,8 +15,8 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `*Contact Inquiry*%0A%0A*Name:* ${form.name}%0A*Email:* ${form.email}%0A*WhatsApp:* ${form.whatsapp}%0A*Message:* ${form.message}`;
-    window.open(`https://wa.me/918141517483?text=${msg}`, "_blank");
+    const msg = `*Contact Inquiry*\n\n*Name:* ${form.name}\n*Email:* ${form.email}\n*WhatsApp:* ${form.whatsapp}\n*Message:* ${form.message}`;
+    openWhatsApp(msg);
   };
 
   return (
@@ -34,7 +35,11 @@ const Contact = () => {
               <div>
                 <h3 className="text-2xl font-heading font-bold text-foreground mb-6">Let's Connect</h3>
                 <div className="space-y-5">
-                  <a href="https://wa.me/918141517483" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 glass-card p-5 hover:shadow-gold transition-all duration-300">
+                  <a
+                    href={getWhatsAppUrl()}
+                    onClick={(e) => { e.preventDefault(); openSmartLink("whatsapp"); }}
+                    className="flex items-center gap-4 glass-card p-5 hover:shadow-gold transition-all duration-300"
+                  >
                     <div className="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center">
                       <Phone size={22} className="text-success" />
                     </div>
