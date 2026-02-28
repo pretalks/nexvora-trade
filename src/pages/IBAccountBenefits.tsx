@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
+import { openWhatsApp } from "@/lib/smartLinks";
 import ibSpreads from "@/assets/ib-spreads.jpg";
 import ibCashback from "@/assets/ib-cashback.jpg";
 import ibSupport from "@/assets/ib-support.jpg";
@@ -26,7 +27,7 @@ const steps = [
 ];
 
 const IBAccountBenefits = () => {
-  const whatsappLink = "https://wa.me/918141517483?text=Hi%2C%20I%27m%20interested%20in%20the%20IB%20Account%20program";
+  const whatsappMessage = "Hi, I'm interested in the IB Account program";
 
   return (
     <Layout>
@@ -95,8 +96,8 @@ const IBAccountBenefits = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">Ready to Unlock Premium Benefits?</h2>
             <p className="text-primary-foreground/70 font-body text-lg mb-8 max-w-xl mx-auto">Join our IB program today and start trading with exclusive advantages.</p>
-            <Button variant="hero" size="lg" asChild>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">Join IB Program via WhatsApp</a>
+            <Button variant="hero" size="lg" onClick={() => openWhatsApp(whatsappMessage)}>
+              Join IB Program via WhatsApp
             </Button>
           </motion.div>
         </div>

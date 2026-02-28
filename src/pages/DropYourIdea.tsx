@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
+import { openWhatsApp } from "@/lib/smartLinks";
 
 const DropYourIdea = () => {
   const [form, setForm] = useState({
@@ -16,8 +17,8 @@ const DropYourIdea = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `*New EA Idea Submission*%0A%0A*Name:* ${form.name}%0A*Email:* ${form.email}%0A*WhatsApp:* ${form.whatsapp}%0A*Trading Pair:* ${form.pair}%0A*Timeframe:* ${form.timeframe}%0A*Entry Logic:* ${form.entry}%0A*SL/TP Logic:* ${form.sltp}%0A*Risk Management:* ${form.risk}%0A*Extra Notes:* ${form.notes}`;
-    window.open(`https://wa.me/918141517483?text=${message}`, "_blank");
+    const message = `*New EA Idea Submission*\n\n*Name:* ${form.name}\n*Email:* ${form.email}\n*WhatsApp:* ${form.whatsapp}\n*Trading Pair:* ${form.pair}\n*Timeframe:* ${form.timeframe}\n*Entry Logic:* ${form.entry}\n*SL/TP Logic:* ${form.sltp}\n*Risk Management:* ${form.risk}\n*Extra Notes:* ${form.notes}`;
+    openWhatsApp(message);
   };
 
   return (

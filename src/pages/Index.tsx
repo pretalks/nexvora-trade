@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Zap, Shield, BarChart3, Settings, TestTube, TrendingUp } from "lucide-react";
+import { openWhatsApp } from "@/lib/smartLinks";
 import Layout from "@/components/Layout";
 import StatsCounter from "@/components/StatsCounter";
 import SectionHeading from "@/components/SectionHeading";
@@ -250,10 +251,8 @@ const Index = () => {
               <Button variant="hero" size="lg" asChild>
                 <Link to="/drop-your-idea">Submit Your Idea</Link>
               </Button>
-              <Button variant="whatsapp" size="lg" asChild>
-                <a href="https://wa.me/918141517483?text=Hi%2C%20I%20want%20to%20start%20my%20trading%20automation%20journey" target="_blank" rel="noopener noreferrer">
-                  💬 Chat on WhatsApp
-                </a>
+              <Button variant="whatsapp" size="lg" onClick={() => openWhatsApp("Hi, I want to start my trading automation journey")}>
+                💬 Chat on WhatsApp
               </Button>
             </div>
           </motion.div>

@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Send, Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { openSmartLink, getSocialUrl, getWhatsAppUrl } from "@/lib/smartLinks";
+
+const socialIcons = [
+  { icon: Facebook, platform: "facebook" as const, label: "Facebook" },
+  { icon: Instagram, platform: "instagram" as const, label: "Instagram" },
+  { icon: Send, platform: "telegram" as const, label: "Telegram" },
+];
 
 const Footer = () => {
   return (
@@ -14,15 +21,22 @@ const Footer = () => {
               Premium MT5 Expert Advisor development company. We convert your trading ideas into powerful automated strategies.
             </p>
             <div className="flex gap-3">
-              <a href="https://www.facebook.com/share/1GEgkEY4fW/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent/80 hover:text-accent-foreground hover:scale-110 transition-all duration-300">
-                <Facebook size={18} />
-              </a>
-              <a href="https://www.instagram.com/xtrendedutech/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent/80 hover:text-accent-foreground hover:scale-110 transition-all duration-300">
-                <Instagram size={18} />
-              </a>
-              <a href="https://t.me/xtrendet" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent/80 hover:text-accent-foreground hover:scale-110 transition-all duration-300">
-                <Send size={18} />
-              </a>
+              {socialIcons.map((s) => (
+                <a
+                  key={s.label}
+                  href={getSocialUrl(s.platform)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    openSmartLink(s.platform);
+                  }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent/80 hover:text-accent-foreground hover:scale-110 transition-all duration-300"
+                >
+                  <s.icon size={18} />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -54,7 +68,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-sm text-primary-foreground/70">
                 <Phone size={16} className="text-accent shrink-0" />
-                <a href="https://wa.me/918141517483" className="hover:text-accent transition-colors">+91 8141517483</a>
+                <a href={getWhatsAppUrl()} onClick={(e) => { e.preventDefault(); openSmartLink("whatsapp"); }} className="hover:text-accent transition-colors">+91 8141517483</a>
               </li>
               <li className="flex items-center gap-3 text-sm text-primary-foreground/70">
                 <Mail size={16} className="text-accent shrink-0" />
