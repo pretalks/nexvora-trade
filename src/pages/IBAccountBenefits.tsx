@@ -93,7 +93,7 @@ const IBAccountBenefits = () => {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="pt-32 pb-12 md:pt-40 md:pb-20 gradient-navy relative overflow-hidden">
+      <section className="pt-16 pb-8 md:pt-20 md:pb-12 gradient-navy relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, hsl(40 70% 55% / 0.3) 0%, transparent 50%)" }} />
         <div className="container-custom px-4 md:px-8 relative z-10 text-center">
           <motion.span {...fadeUp} className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase gradient-gold text-primary mb-6">
@@ -112,9 +112,9 @@ const IBAccountBenefits = () => {
       </section>
 
        {/* ── Choose Your Broker ── */}
-        <section className="section-padding bg-background">
+        <section className="pt-8 pb-12 md:pt-12 md:pb-16 bg-background">
           <div className="container-custom max-w-3xl">
-            <SectionHeading badge="Get Started" title="Choose Your Broker" subtitle="Open a live account using one of our partner links below." />
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground leading-tight text-center mb-8">Choose Your Broker</h2>
             <div className="grid grid-cols-2 gap-3 md:gap-6">
              {brokers.map((b, i) => (
                <motion.div key={b.name} {...fadeUp} transition={{ delay: i * 0.15 }} className="glass-card-elevated overflow-hidden group hover:shadow-gold transition-all duration-300">
