@@ -111,11 +111,11 @@ const IBAccountBenefits = () => {
         </div>
       </section>
 
-      {/* ── Choose Your Broker ── */}
-       <section className="section-padding bg-background">
-         <div className="container-custom max-w-3xl">
-           <SectionHeading badge="Get Started" title="Choose Your Broker" subtitle="Open a live account using one of our partner links below." />
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+       {/* ── Choose Your Broker ── */}
+        <section className="section-padding bg-background">
+          <div className="container-custom max-w-3xl">
+            <SectionHeading badge="Get Started" title="Choose Your Broker" subtitle="Open a live account using one of our partner links below." />
+            <div className="grid grid-cols-2 gap-3 md:gap-6">
              {brokers.map((b, i) => (
                <motion.div key={b.name} {...fadeUp} transition={{ delay: i * 0.15 }} className="glass-card-elevated overflow-hidden group hover:shadow-gold transition-all duration-300">
                  <div className={`h-3 bg-gradient-to-r ${b.color}`} />
