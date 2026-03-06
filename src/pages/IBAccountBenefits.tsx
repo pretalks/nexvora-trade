@@ -111,103 +111,103 @@ const IBAccountBenefits = () => {
         </div>
       </section>
 
-      {/* ── Who Can Join ── */}
-      <section className="section-padding bg-background">
-        <div className="container-custom">
-          <SectionHeading badge="Who Can Join" title="Are You One of These?" subtitle="Now you can monetize your network with high XAUUSD rebates." />
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-            {whoCanJoin.map((item, i) => (
-              <motion.div key={item.label} {...fadeUp} transition={{ delay: i * 0.08 }} className={`${card} text-center group hover:shadow-gold transition-all duration-300`}>
-                <div className="w-14 h-14 rounded-2xl gradient-gold flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <item.icon className="w-7 h-7 text-primary" />
-                </div>
-                <p className="font-heading font-semibold text-foreground text-sm">{item.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Rebate Highlight ── */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-custom max-w-3xl">
-          <motion.div {...fadeUp} className="glass-card-elevated p-8 md:p-12 text-center border-2 border-accent/30 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 gradient-gold" />
-            <DollarSign className="w-12 h-12 text-accent mx-auto mb-4" />
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-2">
-              Earn <span className="text-gradient-gold">$<AnimatedCounter target={10} />–$<AnimatedCounter target={18} /></span> Per Lot
-            </h2>
-            <p className="text-muted-foreground font-body text-lg">Traded by Your Clients on XAUUSD</p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Why Join ── */}
-      <section className="section-padding bg-background">
-        <div className="container-custom">
-          <SectionHeading badge="Why Join" title="Why Join Our Partner Program" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whyJoin.map((item, i) => (
-              <motion.div key={item.title} {...fadeUp} transition={{ delay: i * 0.1 }} className={`${card} group hover:shadow-gold transition-all duration-300`}>
-                <div className="w-12 h-12 rounded-xl gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <item.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-heading font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground font-body text-sm leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── How It Works ── */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-custom max-w-4xl">
-          <SectionHeading badge="How It Works" title="5 Simple Steps to Start Earning" />
-          <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
-            <div className="space-y-6">
-              {steps.map((s, i) => (
-                <motion.div key={s.title} {...fadeUp} transition={{ delay: i * 0.12 }} className="flex items-start gap-6 relative">
-                  <div className="w-16 h-16 rounded-2xl gradient-gold flex items-center justify-center shrink-0 relative z-10 shadow-gold">
-                    <s.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <div className="glass-card-elevated p-6 flex-1">
-                    <span className="text-xs font-semibold text-accent font-body uppercase tracking-wider">Step {i + 1}</span>
-                    <h3 className="text-lg font-heading font-semibold text-foreground mt-1 mb-1">{s.title}</h3>
-                    <p className="text-muted-foreground font-body text-sm leading-relaxed">{s.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          <motion.p {...fadeUp} className="text-center text-muted-foreground font-body mt-8 text-sm">
-            Your earnings start as soon as trading volume begins.
-          </motion.p>
-        </div>
-      </section>
-
       {/* ── Choose Your Broker ── */}
-      <section className="section-padding bg-background">
-        <div className="container-custom max-w-3xl">
-          <SectionHeading badge="Get Started" title="Choose Your Broker" subtitle="Open a live account using one of our partner links below." />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {brokers.map((b, i) => (
-              <motion.div key={b.name} {...fadeUp} transition={{ delay: i * 0.15 }} className="glass-card-elevated overflow-hidden group hover:shadow-gold transition-all duration-300">
-                <div className={`h-3 bg-gradient-to-r ${b.color}`} />
-                <div className="p-8 text-center">
-                  <h3 className="text-xl font-heading font-bold text-foreground mb-4">{b.name}</h3>
-                  <Button variant="hero" size="lg" className="w-full" asChild>
-                    <a href={b.url} target="_blank" rel="noopener noreferrer">
-                      Open Account <ArrowRight className="ml-2 w-4 h-4" />
-                    </a>
-                  </Button>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+       <section className="section-padding bg-background">
+         <div className="container-custom max-w-3xl">
+           <SectionHeading badge="Get Started" title="Choose Your Broker" subtitle="Open a live account using one of our partner links below." />
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+             {brokers.map((b, i) => (
+               <motion.div key={b.name} {...fadeUp} transition={{ delay: i * 0.15 }} className="glass-card-elevated overflow-hidden group hover:shadow-gold transition-all duration-300">
+                 <div className={`h-3 bg-gradient-to-r ${b.color}`} />
+                 <div className="p-8 text-center">
+                   <h3 className="text-xl font-heading font-bold text-foreground mb-4">{b.name}</h3>
+                   <Button variant="hero" size="lg" className="w-full" asChild>
+                     <a href={b.url} target="_blank" rel="noopener noreferrer">
+                       Open Account <ArrowRight className="ml-2 w-4 h-4" />
+                     </a>
+                   </Button>
+                 </div>
+               </motion.div>
+             ))}
+           </div>
+         </div>
+       </section>
+
+       {/* ── Who Can Join ── */}
+       <section className="section-padding bg-background">
+         <div className="container-custom">
+           <SectionHeading badge="Who Can Join" title="Are You One of These?" subtitle="Now you can monetize your network with high XAUUSD rebates." />
+           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+             {whoCanJoin.map((item, i) => (
+               <motion.div key={item.label} {...fadeUp} transition={{ delay: i * 0.08 }} className={`${card} text-center group hover:shadow-gold transition-all duration-300`}>
+                 <div className="w-14 h-14 rounded-2xl gradient-gold flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                   <item.icon className="w-7 h-7 text-primary" />
+                 </div>
+                 <p className="font-heading font-semibold text-foreground text-sm">{item.label}</p>
+               </motion.div>
+             ))}
+           </div>
+         </div>
+       </section>
+
+       {/* ── Rebate Highlight ── */}
+       <section className="section-padding bg-muted/30">
+         <div className="container-custom max-w-3xl">
+           <motion.div {...fadeUp} className="glass-card-elevated p-8 md:p-12 text-center border-2 border-accent/30 relative overflow-hidden">
+             <div className="absolute top-0 left-0 w-full h-1 gradient-gold" />
+             <DollarSign className="w-12 h-12 text-accent mx-auto mb-4" />
+             <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-2">
+               Earn <span className="text-gradient-gold">$<AnimatedCounter target={10} />–$<AnimatedCounter target={18} /></span> Per Lot
+             </h2>
+             <p className="text-muted-foreground font-body text-lg">Traded by Your Clients on XAUUSD</p>
+           </motion.div>
+         </div>
+       </section>
+
+       {/* ── Why Join ── */}
+       <section className="section-padding bg-background">
+         <div className="container-custom">
+           <SectionHeading badge="Why Join" title="Why Join Our Partner Program" />
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+             {whyJoin.map((item, i) => (
+               <motion.div key={item.title} {...fadeUp} transition={{ delay: i * 0.1 }} className={`${card} group hover:shadow-gold transition-all duration-300`}>
+                 <div className="w-12 h-12 rounded-xl gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                   <item.icon className="w-6 h-6 text-primary" />
+                 </div>
+                 <h3 className="text-lg font-heading font-semibold text-foreground mb-2">{item.title}</h3>
+                 <p className="text-muted-foreground font-body text-sm leading-relaxed">{item.desc}</p>
+               </motion.div>
+             ))}
+           </div>
+         </div>
+       </section>
+
+       {/* ── How It Works ── */}
+       <section className="section-padding bg-muted/30">
+         <div className="container-custom max-w-4xl">
+           <SectionHeading badge="How It Works" title="5 Simple Steps to Start Earning" />
+           <div className="relative">
+             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
+             <div className="space-y-6">
+               {steps.map((s, i) => (
+                 <motion.div key={s.title} {...fadeUp} transition={{ delay: i * 0.12 }} className="flex items-start gap-6 relative">
+                   <div className="w-16 h-16 rounded-2xl gradient-gold flex items-center justify-center shrink-0 relative z-10 shadow-gold">
+                     <s.icon className="w-7 h-7 text-primary" />
+                   </div>
+                   <div className="glass-card-elevated p-6 flex-1">
+                     <span className="text-xs font-semibold text-accent font-body uppercase tracking-wider">Step {i + 1}</span>
+                     <h3 className="text-lg font-heading font-semibold text-foreground mt-1 mb-1">{s.title}</h3>
+                     <p className="text-muted-foreground font-body text-sm leading-relaxed">{s.desc}</p>
+                   </div>
+                 </motion.div>
+               ))}
+             </div>
+           </div>
+           <motion.p {...fadeUp} className="text-center text-muted-foreground font-body mt-8 text-sm">
+             Your earnings start as soon as trading volume begins.
+           </motion.p>
+         </div>
+       </section>
 
       {/* ── Earning Example ── */}
       <section className="section-padding bg-muted/30">
