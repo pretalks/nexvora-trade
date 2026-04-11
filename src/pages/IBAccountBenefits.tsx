@@ -11,6 +11,12 @@ import {
   DollarSign, ArrowRight, AlertTriangle
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import vantageLogo from "@/assets/broker-vantage.png";
+import startraderLogo from "@/assets/broker-startrader.png";
+import vtmarketsLogo from "@/assets/broker-vtmarkets.png";
+import forex4youLogo from "@/assets/broker-forex4you.png";
 
 /* ── Animated Counter ── */
 const AnimatedCounter = ({ target, prefix = "", suffix = "" }: { target: number; prefix?: string; suffix?: string }) => {
@@ -68,11 +74,25 @@ const brokers = [
     name: "Vantage Markets",
     url: "https://www.vantagemarkets.com/open-live-account/?affid=MTQ1Mzg2&invitecode=aLMhn8QV",
     color: "from-[hsl(220,60%,25%)] to-[hsl(220,40%,45%)]",
+    logo: vantageLogo,
   },
   {
     name: "Star Trader",
-    url: "https://www.startrader.com/live-account/?affid=MjE2ODU0ODY=&ibpRebateCode=MjE2ODU0ODZTVDEwMzM0",
+    url: "https://www.startrader.com/live-account/?affid=MjE2ODU0ODY=&ibpRebateCode=MjE2ODU0ODZTVDEwNTcy",
     color: "from-[hsl(40,70%,45%)] to-[hsl(40,70%,55%)]",
+    logo: startraderLogo,
+  },
+  {
+    name: "VT Markets",
+    url: "https://www.vtmarkets.com/trade-now/?affid=22203732",
+    color: "from-[hsl(0,80%,45%)] to-[hsl(0,70%,55%)]",
+    logo: vtmarketsLogo,
+  },
+  {
+    name: "Forex4you",
+    url: "https://account.markets4you.online/en/user-registration/?affid=nztufqq",
+    color: "from-[hsl(145,60%,35%)] to-[hsl(170,50%,40%)]",
+    logo: forex4youLogo,
   },
 ];
 
@@ -113,25 +133,34 @@ const IBAccountBenefits = () => {
 
        {/* ── Choose Your Broker ── */}
         <section className="pt-8 pb-12 md:pt-12 md:pb-16 bg-background">
-          <div className="container-custom max-w-3xl">
+          <div className="container-custom">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground leading-tight text-center mb-8">Choose Your Broker</h2>
-            <div className="grid grid-cols-2 gap-3 md:gap-6">
-             {brokers.map((b, i) => (
-               <motion.div key={b.name} {...fadeUp} transition={{ delay: i * 0.15 }} className="glass-card-elevated overflow-hidden group hover:shadow-gold transition-all duration-300">
-                 <div className={`h-3 bg-gradient-to-r ${b.color}`} />
-                 <div className="p-8 text-center">
-                   <h3 className="text-xl font-heading font-bold text-foreground mb-4">{b.name}</h3>
-                   <Button variant="hero" size="lg" className="w-full" asChild>
-                     <a href={b.url} target="_blank" rel="noopener noreferrer">
-                       Open Account <ArrowRight className="ml-2 w-4 h-4" />
-                     </a>
-                   </Button>
-                 </div>
-               </motion.div>
-             ))}
-           </div>
-         </div>
-       </section>
+            <Carousel
+              opts={{ align: "start", loop: true }}
+              plugins={[Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })]}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-3 md:-ml-4">
+                {brokers.map((b) => (
+                  <CarouselItem key={b.name} className="pl-3 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <div className="glass-card-elevated overflow-hidden group hover:shadow-gold transition-all duration-300 h-full">
+                      <div className={`h-2 bg-gradient-to-r ${b.color}`} />
+                      <div className="p-4 md:p-6 text-center flex flex-col items-center gap-3">
+                        <img src={b.logo} alt={b.name} className="h-14 md:h-20 w-auto object-contain" />
+                        <h3 className="text-sm md:text-lg font-heading font-bold text-foreground">{b.name}</h3>
+                        <Button variant="hero" size="default" className="w-full text-xs md:text-sm" asChild>
+                          <a href={b.url} target="_blank" rel="noopener noreferrer">
+                            Open Account <ArrowRight className="ml-1 w-3 h-3 md:w-4 md:h-4" />
+                          </a>
+                        </Button>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
+        </section>
 
        {/* ── Who Can Join ── */}
        <section className="section-padding bg-background">
