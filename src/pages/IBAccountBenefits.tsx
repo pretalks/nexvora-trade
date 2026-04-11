@@ -11,6 +11,12 @@ import {
   DollarSign, ArrowRight, AlertTriangle
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import vantageLogo from "@/assets/broker-vantage.png";
+import startraderLogo from "@/assets/broker-startrader.png";
+import vtmarketsLogo from "@/assets/broker-vtmarkets.png";
+import forex4youLogo from "@/assets/broker-forex4you.png";
 
 /* ── Animated Counter ── */
 const AnimatedCounter = ({ target, prefix = "", suffix = "" }: { target: number; prefix?: string; suffix?: string }) => {
@@ -68,11 +74,25 @@ const brokers = [
     name: "Vantage Markets",
     url: "https://www.vantagemarkets.com/open-live-account/?affid=MTQ1Mzg2&invitecode=aLMhn8QV",
     color: "from-[hsl(220,60%,25%)] to-[hsl(220,40%,45%)]",
+    logo: vantageLogo,
   },
   {
     name: "Star Trader",
-    url: "https://www.startrader.com/live-account/?affid=MjE2ODU0ODY=&ibpRebateCode=MjE2ODU0ODZTVDEwMzM0",
+    url: "https://www.startrader.com/live-account/?affid=MjE2ODU0ODY=&ibpRebateCode=MjE2ODU0ODZTVDEwNTcy",
     color: "from-[hsl(40,70%,45%)] to-[hsl(40,70%,55%)]",
+    logo: startraderLogo,
+  },
+  {
+    name: "VT Markets",
+    url: "https://www.vtmarkets.com/trade-now/?affid=22203732",
+    color: "from-[hsl(0,80%,45%)] to-[hsl(0,70%,55%)]",
+    logo: vtmarketsLogo,
+  },
+  {
+    name: "Forex4you",
+    url: "https://account.markets4you.online/en/user-registration/?affid=nztufqq",
+    color: "from-[hsl(145,60%,35%)] to-[hsl(170,50%,40%)]",
+    logo: forex4youLogo,
   },
 ];
 
