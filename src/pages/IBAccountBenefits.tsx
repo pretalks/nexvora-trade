@@ -89,7 +89,7 @@ const brokers = [
     logo: vtmarketsLogo,
   },
   {
-    name: "Forex4you",
+    name: "Markets4You",
     url: "https://account.markets4you.online/en/user-registration/?affid=nztufqq",
     color: "from-[hsl(145,60%,35%)] to-[hsl(170,50%,40%)]",
     logo: forex4youLogo,
@@ -146,7 +146,7 @@ const IBAccountBenefits = () => {
                     <div className="glass-card-elevated overflow-hidden group hover:shadow-gold transition-all duration-300 h-full">
                       <div className={`h-2 bg-gradient-to-r ${b.color}`} />
                       <div className="p-4 md:p-6 text-center flex flex-col items-center gap-3">
-                        <img src={b.logo} alt={b.name} className="h-14 md:h-20 w-auto object-contain" />
+                        <img src={b.logo} alt={b.name} className="h-28 md:h-40 w-auto object-contain" />
                         <h3 className="text-sm md:text-lg font-heading font-bold text-foreground">{b.name}</h3>
                         <Button variant="hero" size="default" className="w-full text-xs md:text-sm" asChild>
                           <a href={b.url} target="_blank" rel="noopener noreferrer">
