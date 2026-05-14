@@ -4,10 +4,10 @@ import { openWhatsApp, getWhatsAppUrl } from "@/lib/smartLinks";
 const WhatsAppButton = () => {
   return (
     <a
-      href={getWhatsAppUrl("Hi, I'm interested in X-Trend Edu Tech services")}
+      href={getWhatsAppUrl("Hi, I'm interested in Tradigo services")}
       onClick={(e) => {
         e.preventDefault();
-        openWhatsApp("Hi, I'm interested in X-Trend Edu Tech services");
+        openWhatsApp("Hi, I'm interested in Tradigo services");
       }}
       target="_blank"
       rel="noopener noreferrer"

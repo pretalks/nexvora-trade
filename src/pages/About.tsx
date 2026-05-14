@@ -17,7 +17,7 @@ const About = () => {
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-muted/30">
         <div className="container-custom px-4 md:px-8">
-          <SectionHeading badge="About Us" title="Your Trusted Partner in Trading Automation" subtitle="X-Trend Edu Tech is a premium MT5 Expert Advisor development company committed to transforming trading ideas into powerful automated strategies." />
+          <SectionHeading badge="About Us" title="Your Trusted Partner in Trading Automation" subtitle="Tradigo is a premium MT5 Expert Advisor development company committed to transforming trading ideas into powerful automated strategies." />
         </div>
       </section>
 
@@ -26,12 +26,12 @@ const About = () => {
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <img src={teamDiscussion} alt="X-Trend Edu Tech Team" className="rounded-2xl shadow-lg w-full" />
+              <img src={teamDiscussion} alt="Tradigo Team" className="rounded-2xl shadow-lg w-full" />
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="space-y-6">
               <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground">Our Story</h3>
               <p className="text-muted-foreground font-body leading-relaxed">
-                Founded with a vision to democratize algorithmic trading, X-Trend Edu Tech has grown into a trusted name in forex automation. With over 500 Expert Advisors developed and 2000+ active traders using our solutions, we've built a reputation for quality, reliability, and innovation.
+                Founded with a vision to democratize algorithmic trading, Tradigo has grown into a trusted name in forex automation. With over 500 Expert Advisors developed and 2000+ active traders using our solutions, we've built a reputation for quality, reliability, and innovation.
               </p>
               <p className="text-muted-foreground font-body leading-relaxed">
                 Our team of experienced developers and traders work together to convert your unique trading ideas into professional-grade automated systems. We believe every trader deserves access to institutional-quality tools.
@@ -56,9 +56,9 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass-card-elevated p-8 text-center group hover:shadow-gold transition-all duration-300"
+                className="glass-card-elevated p-8 text-center group hover:shadow-brand transition-all duration-300"
               >
-                <div className="w-16 h-16 rounded-2xl gradient-gold flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 rounded-2xl gradient-brand flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
                   <v.icon size={28} className="text-primary" />
                 </div>
                 <h3 className="text-lg font-heading font-semibold text-foreground mb-2">{v.title}</h3>

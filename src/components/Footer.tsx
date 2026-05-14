@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Send, Mail, Phone, MapPin } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-1.jpeg";
 import { openSmartLink, getSocialUrl, getWhatsAppUrl } from "@/lib/smartLinks";
 
 const socialIcons = [
@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <img src={logo} alt="X-Trend Edu Tech" className="h-12 w-auto brightness-200" />
+            <img src={logo} alt="Tradigo" className="h-12 w-auto" />
             <p className="text-primary-foreground/70 text-sm leading-relaxed font-body">
               Premium MT5 Expert Advisor development company. We convert your trading ideas into powerful automated strategies.
             </p>
@@ -72,7 +72,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-sm text-primary-foreground/70">
                 <Mail size={16} className="text-accent shrink-0" />
-                <a href="mailto:xtrendedutech@gmail.com" className="hover:text-accent transition-colors">xtrendedutech@gmail.com</a>
+                <a href="mailto:contact@tradigo.com" className="hover:text-accent transition-colors">contact@tradigo.com</a>
               </li>
               <li className="flex items-start gap-3 text-sm text-primary-foreground/70">
                 <MapPin size={16} className="text-accent shrink-0 mt-0.5" />
@@ -109,7 +109,7 @@ const Footer = () => {
 
         <div className="mt-6 pt-6 border-t border-primary-foreground/10 text-center">
           <p className="text-primary-foreground/50 text-xs font-body">
-            © {new Date().getFullYear()} X-Trend Edu Tech. All rights reserved.
+            © {new Date().getFullYear()} Tradigo. All rights reserved.
           </p>
         </div>
       </div>

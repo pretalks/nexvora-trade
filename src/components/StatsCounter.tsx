@@ -51,7 +51,7 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
   }, [started, target]);
 
   return (
-    <div ref={ref} className="text-4xl md:text-5xl font-heading font-bold text-gradient-gold">
+    <div ref={ref} className="text-4xl md:text-5xl font-heading font-bold text-gradient-brand">
       {count}{suffix}
     </div>
   );

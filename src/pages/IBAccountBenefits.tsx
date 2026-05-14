@@ -113,10 +113,10 @@ const IBAccountBenefits = () => {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="pt-16 pb-8 md:pt-20 md:pb-12 gradient-navy relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, hsl(40 70% 55% / 0.3) 0%, transparent 50%)" }} />
+      <section className="pt-16 pb-8 md:pt-20 md:pb-12 gradient-indigo relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, hsl(183 100% 50% / 0.3) 0%, transparent 50%)" }} />
         <div className="container-custom px-4 md:px-8 relative z-10 text-center">
-          <motion.span {...fadeUp} className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase gradient-gold text-primary mb-6">
+          <motion.span {...fadeUp} className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase gradient-brand text-primary mb-6">
             Partner Program
           </motion.span>
           <motion.h1 {...fadeUp} transition={{ delay: 0.1 }} className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-4">
@@ -143,7 +143,7 @@ const IBAccountBenefits = () => {
               <CarouselContent className="-ml-3 md:-ml-4">
                 {brokers.map((b) => (
                   <CarouselItem key={b.name} className="pl-3 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                    <div className="glass-card-elevated overflow-hidden group hover:shadow-gold transition-all duration-300 h-full">
+                    <div className="glass-card-elevated overflow-hidden group hover:shadow-brand transition-all duration-300 h-full">
                       <div className={`h-2 bg-gradient-to-r ${b.color}`} />
                       <div className="p-4 md:p-6 text-center flex flex-col items-center gap-3">
                         <img src={b.logo} alt={b.name} className="h-28 md:h-40 w-auto object-contain" />
@@ -168,8 +168,8 @@ const IBAccountBenefits = () => {
            <SectionHeading badge="Who Can Join" title="Are You One of These?" subtitle="Now you can monetize your network with high XAUUSD rebates." />
            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
              {whoCanJoin.map((item, i) => (
-               <motion.div key={item.label} {...fadeUp} transition={{ delay: i * 0.08 }} className={`${card} text-center group hover:shadow-gold transition-all duration-300`}>
-                 <div className="w-14 h-14 rounded-2xl gradient-gold flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+               <motion.div key={item.label} {...fadeUp} transition={{ delay: i * 0.08 }} className={`${card} text-center group hover:shadow-brand transition-all duration-300`}>
+                 <div className="w-14 h-14 rounded-2xl gradient-brand flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                    <item.icon className="w-7 h-7 text-primary" />
                  </div>
                  <p className="font-heading font-semibold text-foreground text-sm">{item.label}</p>
@@ -183,10 +183,10 @@ const IBAccountBenefits = () => {
        <section className="section-padding bg-muted/30">
          <div className="container-custom max-w-3xl">
            <motion.div {...fadeUp} className="glass-card-elevated p-8 md:p-12 text-center border-2 border-accent/30 relative overflow-hidden">
-             <div className="absolute top-0 left-0 w-full h-1 gradient-gold" />
+             <div className="absolute top-0 left-0 w-full h-1 gradient-brand" />
              <DollarSign className="w-12 h-12 text-accent mx-auto mb-4" />
              <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-2">
-               Earn <span className="text-gradient-gold">$<AnimatedCounter target={10} />–$<AnimatedCounter target={18} /></span> Per Lot
+               Earn <span className="text-gradient-brand">$<AnimatedCounter target={10} />–$<AnimatedCounter target={18} /></span> Per Lot
              </h2>
              <p className="text-muted-foreground font-body text-lg">Traded by Your Clients on XAUUSD</p>
            </motion.div>
@@ -199,8 +199,8 @@ const IBAccountBenefits = () => {
            <SectionHeading badge="Why Join" title="Why Join Our Partner Program" />
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
              {whyJoin.map((item, i) => (
-               <motion.div key={item.title} {...fadeUp} transition={{ delay: i * 0.1 }} className={`${card} group hover:shadow-gold transition-all duration-300`}>
-                 <div className="w-12 h-12 rounded-xl gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+               <motion.div key={item.title} {...fadeUp} transition={{ delay: i * 0.1 }} className={`${card} group hover:shadow-brand transition-all duration-300`}>
+                 <div className="w-12 h-12 rounded-xl gradient-brand flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                    <item.icon className="w-6 h-6 text-primary" />
                  </div>
                  <h3 className="text-lg font-heading font-semibold text-foreground mb-2">{item.title}</h3>
@@ -220,7 +220,7 @@ const IBAccountBenefits = () => {
              <div className="space-y-6">
                {steps.map((s, i) => (
                  <motion.div key={s.title} {...fadeUp} transition={{ delay: i * 0.12 }} className="flex items-start gap-6 relative">
-                   <div className="w-16 h-16 rounded-2xl gradient-gold flex items-center justify-center shrink-0 relative z-10 shadow-gold">
+                   <div className="w-16 h-16 rounded-2xl gradient-brand flex items-center justify-center shrink-0 relative z-10 shadow-brand">
                      <s.icon className="w-7 h-7 text-primary" />
                    </div>
                    <div className="glass-card-elevated p-6 flex-1">
@@ -244,7 +244,7 @@ const IBAccountBenefits = () => {
           <SectionHeading badge="Earning Potential" title="What You Can Earn" />
           <motion.div {...fadeUp} className="glass-card-elevated p-8 md:p-12 text-center">
             <p className="text-muted-foreground font-body text-lg mb-4">If your network trades <span className="font-semibold text-foreground">100 lots</span> per month:</p>
-            <div className="text-4xl md:text-6xl font-heading font-bold text-gradient-gold mb-2">
+            <div className="text-4xl md:text-6xl font-heading font-bold text-gradient-brand mb-2">
               $<AnimatedCounter target={1800} />
             </div>
             <p className="text-muted-foreground font-body text-base mb-1">Monthly Rebate</p>
@@ -262,7 +262,7 @@ const IBAccountBenefits = () => {
           <SectionHeading badge="Perfect For" title="Who This Is For" subtitle="If you already have traders, this is your extra income stream." />
           <div className="flex flex-wrap justify-center gap-3 md:gap-4">
             {whoFor.map((item, i) => (
-              <motion.div key={item.label} {...fadeUp} transition={{ delay: i * 0.08 }} className="flex items-center gap-3 glass-card-elevated px-5 py-3 hover:shadow-gold transition-all duration-300">
+              <motion.div key={item.label} {...fadeUp} transition={{ delay: i * 0.08 }} className="flex items-center gap-3 glass-card-elevated px-5 py-3 hover:shadow-brand transition-all duration-300">
                 <item.icon className="w-5 h-5 text-accent shrink-0" />
                 <span className="font-body text-sm font-medium text-foreground">{item.label}</span>
               </motion.div>
@@ -309,7 +309,7 @@ const IBAccountBenefits = () => {
       </section>
 
       {/* ── Final CTA ── */}
-      <section className="section-padding gradient-navy text-center">
+      <section className="section-padding gradient-indigo text-center">
         <div className="container-custom">
           <motion.div {...fadeUp}>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">

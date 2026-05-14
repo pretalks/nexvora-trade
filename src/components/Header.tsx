@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail, Facebook, Instagram, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-1.jpeg";
 import { openSmartLink, openWhatsApp, getWhatsAppUrl, getSocialUrl } from "@/lib/smartLinks";
 
 const navLinks = [
@@ -51,8 +51,8 @@ const Header = () => {
             <a href="tel:+918141517483" className="flex items-center gap-1.5 hover:text-accent transition-colors duration-200">
               <Phone size={12} /> +91 8141517483
             </a>
-            <a href="mailto:xtrendedutech@gmail.com" className="hidden sm:flex items-center gap-1.5 hover:text-accent transition-colors duration-200">
-              <Mail size={12} /> xtrendedutech@gmail.com
+            <a href="mailto:contact@tradigo.com" className="hidden sm:flex items-center gap-1.5 hover:text-accent transition-colors duration-200">
+              <Mail size={12} /> contact@tradigo.com
             </a>
           </div>
           <div className="flex items-center gap-2">
@@ -88,8 +88,8 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-2 group">
             <img
               src={logo}
-              alt="X-Trend Edu Tech"
-              className="h-12 md:h-14 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_12px_hsl(40,70%,55%,0.6)] group-hover:scale-105"
+              alt="Tradigo"
+              className="h-12 md:h-14 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_12px_hsl(183,100%,50%,0.6)] group-hover:scale-105"
             />
           </Link>
 
@@ -116,7 +116,7 @@ const Header = () => {
             <Button
               variant="gold"
               size="sm"
-              onClick={() => openWhatsApp("Hi, I want to know more about X-Trend Edu Tech")}
+              onClick={() => openWhatsApp("Hi, I want to know more about Tradigo")}
             >
               WhatsApp Us
             </Button>
@@ -159,7 +159,7 @@ const Header = () => {
                   variant="gold"
                   size="sm"
                   className="mt-2"
-                  onClick={() => openWhatsApp("Hi, I want to know more about X-Trend Edu Tech")}
+                  onClick={() => openWhatsApp("Hi, I want to know more about Tradigo")}
                 >
                   WhatsApp Us
                 </Button>

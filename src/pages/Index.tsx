@@ -29,7 +29,7 @@ const heroSlides = [
   },
   {
     image: teamDiscussion,
-    title: "Join 2000+ Traders Who Trust X-Trend Edu Tech",
+    title: "Join 2000+ Traders Who Trust Tradigo",
     subtitle: "From concept to execution — our team of experts transforms your trading vision into reality.",
   },
 ];
@@ -52,7 +52,7 @@ const strategies = [
 ];
 
 const testimonials = [
-  { name: "Rajesh Kumar", role: "Full-time Trader", text: "X-Trend converted my manual RSI strategy into an EA that runs 24/5. My consistency improved dramatically." },
+  { name: "Rajesh Kumar", role: "Full-time Trader", text: "Tradigo converted my manual RSI strategy into an EA that runs 24/5. My consistency improved dramatically." },
   { name: "Priya Sharma", role: "Part-time Trader", text: "The free demo EA helped me understand automated trading. Now I use the full version and it's been amazing." },
   { name: "Amit Patel", role: "Forex Investor", text: "Professional team, excellent communication, and the EA performs exactly as discussed. Highly recommended!" },
 ];
@@ -108,7 +108,7 @@ const HeroSection = () => {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="hero" size="lg" asChild>
-                  <Link to="/drop-your-idea">🔵 Submit Your Idea</Link>
+                  <Link to="/drop-your-idea">🚀 Submit Your Idea</Link>
                 </Button>
               </div>
             </motion.div>
@@ -152,9 +152,9 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="glass-card-elevated p-8 group hover:shadow-gold transition-all duration-300"
+                className="glass-card-elevated p-8 group hover:shadow-brand transition-all duration-300"
               >
-                <div className="w-14 h-14 rounded-xl gradient-gold flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-xl gradient-brand flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                   <f.icon size={24} className="text-primary" />
                 </div>
                 <h3 className="text-xl font-heading font-semibold text-foreground mb-3">{f.title}</h3>
@@ -177,7 +177,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.4 }}
-                className="glass-card-elevated overflow-hidden hover:shadow-gold transition-all duration-300 group"
+                className="glass-card-elevated overflow-hidden hover:shadow-brand transition-all duration-300 group"
               >
                 <div className="h-44 overflow-hidden">
                   <img src={s.image} alt={s.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -238,14 +238,14 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding gradient-navy text-center">
+      <section className="section-padding gradient-indigo text-center">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary-foreground mb-6">
               Start Your Trading Automation Journey Today
             </h2>
             <p className="text-primary-foreground/70 font-body text-lg mb-8 max-w-2xl mx-auto">
-              Share your idea, get a free demo, and experience the power of automated trading with X-Trend Edu Tech.
+              Share your idea, get a free demo, and experience the power of automated trading with Tradigo.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="hero" size="lg" asChild>

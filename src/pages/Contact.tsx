@@ -38,7 +38,7 @@ const Contact = () => {
                   <a
                     href={getWhatsAppUrl()}
                     onClick={(e) => { e.preventDefault(); openSmartLink("whatsapp"); }}
-                    className="flex items-center gap-4 glass-card p-5 hover:shadow-gold transition-all duration-300"
+                    className="flex items-center gap-4 glass-card p-5 hover:shadow-brand transition-all duration-300"
                   >
                     <div className="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center">
                       <Phone size={22} className="text-success" />
@@ -48,13 +48,13 @@ const Contact = () => {
                       <p className="text-muted-foreground font-body text-sm">+91 8141517483</p>
                     </div>
                   </a>
-                  <a href="mailto:xtrendedutech@gmail.com" className="flex items-center gap-4 glass-card p-5 hover:shadow-gold transition-all duration-300">
+                  <a href="mailto:contact@tradigo.com" className="flex items-center gap-4 glass-card p-5 hover:shadow-brand transition-all duration-300">
                     <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
                       <Mail size={22} className="text-accent" />
                     </div>
                     <div>
                       <p className="font-heading font-semibold text-foreground text-sm">Email</p>
-                      <p className="text-muted-foreground font-body text-sm">xtrendedutech@gmail.com</p>
+                      <p className="text-muted-foreground font-body text-sm">contact@tradigo.com</p>
                     </div>
                   </a>
                   <div className="flex items-center gap-4 glass-card p-5">
@@ -79,7 +79,7 @@ const Contact = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="X-Trend Edu Tech Location"
+                  title="Tradigo Location"
                 />
               </div>
             </motion.div>

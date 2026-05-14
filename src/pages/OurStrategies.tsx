@@ -66,7 +66,7 @@ const OurStrategies = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass-card-elevated overflow-hidden group hover:shadow-gold transition-all duration-300 flex flex-col"
+                className="glass-card-elevated overflow-hidden group hover:shadow-brand transition-all duration-300 flex flex-col"
               >
                 <div className="h-48 overflow-hidden">
                   <img src={s.image} alt={s.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -89,7 +89,7 @@ const OurStrategies = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding gradient-navy text-center">
+      <section className="section-padding gradient-indigo text-center">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">Have a Custom Strategy?</h2>

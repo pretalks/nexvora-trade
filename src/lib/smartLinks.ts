@@ -14,12 +14,12 @@ const LINK_CONFIG = {
     fallback: "https://m.facebook.com/share/1GEgkEY4fW/",
   },
   instagram: {
-    primary: "https://www.instagram.com/xtrendedutech/",
-    fallback: "https://m.instagram.com/xtrendedutech/",
+    primary: "https://www.instagram.com/tradigo/",
+    fallback: "https://m.instagram.com/tradigo/",
   },
   telegram: {
-    primary: "https://t.me/xtrendet",
-    fallback: "https://t.me/xtrendet",
+    primary: "https://t.me/tradigo",
+    fallback: "https://t.me/tradigo",
   },
 } as const;
 

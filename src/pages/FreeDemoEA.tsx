@@ -74,9 +74,9 @@ const FreeDemoEA = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass-card-elevated p-8 group hover:shadow-gold transition-all duration-300"
+                className="glass-card-elevated p-8 group hover:shadow-brand transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl gradient-gold flex items-center justify-center mb-5">
+                <div className="w-12 h-12 rounded-xl gradient-brand flex items-center justify-center mb-5">
                   {i === 0 ? <BarChart3 size={22} className="text-primary" /> : i === 1 ? <Zap size={22} className="text-primary" /> : <Shield size={22} className="text-primary" />}
                 </div>
                 <h3 className="text-lg font-heading font-semibold text-foreground mb-2">{ea.name}</h3>
@@ -98,7 +98,7 @@ const FreeDemoEA = () => {
       </section>
 
       {/* Original EA Access */}
-      <section className="section-padding gradient-navy">
+      <section className="section-padding gradient-indigo">
         <div className="container-custom max-w-3xl text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-6">
