@@ -48,8 +48,8 @@ const Header = () => {
       >
         <div className="container-custom flex items-center justify-between h-9 px-4 md:px-8 text-xs font-body">
           <div className="flex items-center gap-4 md:gap-6">
-            <a href="tel:+918141517483" className="flex items-center gap-1.5 hover:text-accent transition-colors duration-200">
-              <Phone size={12} /> +91 8141517483
+            <a href="tel:+919098064667" className="flex items-center gap-1.5 hover:text-accent transition-colors duration-200">
+              <Phone size={12} /> +91 90980 64667
             </a>
             <a href="mailto:contact@tradigo.com" className="hidden sm:flex items-center gap-1.5 hover:text-accent transition-colors duration-200">
               <Mail size={12} /> contact@tradigo.com
@@ -78,10 +78,10 @@ const Header = () => {
 
       {/* Main Header */}
       <header
-        className={`fixed top-9 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-9 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-card/95 backdrop-blur-xl shadow-lg border-b border-border/50"
-            : "bg-transparent"
+            ? "gradient-header backdrop-blur-xl shadow-2xl border-b border-white/10 py-1"
+            : "gradient-header md:bg-transparent"
         }`}
       >
         <div className="container-custom flex items-center justify-between h-16 md:h-20 px-4 md:px-8">
@@ -89,33 +89,42 @@ const Header = () => {
             <img
               src={logo}
               alt="Tradigo"
-              className="h-12 md:h-14 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_12px_hsl(183,100%,50%,0.6)] group-hover:scale-105"
+              className="h-12 md:h-14 w-auto transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
             />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 rounded-lg text-sm font-medium font-body transition-all duration-200 ${
+                className={`relative px-4 py-2 text-sm font-semibold font-body transition-all duration-300 group overflow-hidden ${
                   location.pathname === link.path
-                    ? "text-accent bg-accent/10"
-                    : isScrolled
-                    ? "text-foreground hover:text-accent hover:bg-accent/5"
-                    : "text-foreground/80 hover:text-accent"
+                    ? "text-white"
+                    : "text-white/80 hover:text-white"
                 }`}
               >
-                {link.label}
+                <span className="relative z-10">{link.label}</span>
+                <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-accent transition-transform duration-300 origin-left ${
+                  location.pathname === link.path ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                }`} />
+                {location.pathname === link.path && (
+                  <motion.span
+                    layoutId="active-nav"
+                    className="absolute inset-0 bg-white/10 rounded-lg -z-0"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
               </Link>
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-4">
             <Button
               variant="gold"
               size="sm"
+              className="shadow-gold hover:scale-105 transition-transform duration-300"
               onClick={() => openWhatsApp("Hi, I want to know more about Tradigo")}
             >
               WhatsApp Us
@@ -125,7 +134,7 @@ const Header = () => {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-white"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -136,20 +145,20 @@ const Header = () => {
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-card/98 backdrop-blur-xl border-b border-border"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="lg:hidden gradient-header backdrop-blur-2xl border-b border-white/10 shadow-2xl overflow-hidden"
             >
-              <nav className="flex flex-col p-4 gap-1">
+              <nav className="flex flex-col p-6 gap-2">
                 {navLinks.map((link) => (
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`px-4 py-3 rounded-lg text-sm font-medium font-body transition-all ${
+                    className={`px-4 py-3 rounded-xl text-base font-semibold font-body transition-all ${
                       location.pathname === link.path
-                        ? "text-accent bg-accent/10"
-                        : "text-foreground hover:bg-muted"
+                        ? "text-white bg-white/10 shadow-inner"
+                        : "text-white/70 hover:text-white hover:bg-white/5"
                     }`}
                   >
                     {link.label}
@@ -157,8 +166,8 @@ const Header = () => {
                 ))}
                 <Button
                   variant="gold"
-                  size="sm"
-                  className="mt-2"
+                  size="lg"
+                  className="mt-4 w-full shadow-gold"
                   onClick={() => openWhatsApp("Hi, I want to know more about Tradigo")}
                 >
                   WhatsApp Us

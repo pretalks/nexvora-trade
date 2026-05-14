@@ -23,28 +23,33 @@ const DropYourIdea = () => {
 
   return (
     <Layout>
-      <section className="pt-32 pb-8 md:pt-40 bg-muted/30">
-        <div className="container-custom px-4 md:px-8">
+      <section className="pt-32 pb-8 md:pt-48 md:pb-16 gradient-gold-soft relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+        <div className="container-custom px-4 md:px-8 relative z-10">
           <SectionHeading badge="Share Your Vision" title="Drop Your Trading Idea" subtitle="Have a unique trading idea? Drop your concept below and our development team will convert it into a professional MT5 Expert Advisor." />
         </div>
       </section>
 
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-[#FDFBF7] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px] -z-10" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -z-10" />
+        
         <div className="container-custom max-w-3xl">
           <motion.form
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="glass-card-elevated p-8 md:p-12 space-y-6"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="glass-card-elevated p-8 md:p-16 space-y-8 shadow-2xl relative glow-border"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <InputField label="Full Name" name="name" value={form.name} onChange={handleChange} placeholder="Your name" required />
               <InputField label="Email Address" name="email" type="email" value={form.email} onChange={handleChange} placeholder="you@email.com" required />
               <InputField label="WhatsApp Number" name="whatsapp" value={form.whatsapp} onChange={handleChange} placeholder="+91 XXXXXXXXXX" required />
               <div>
-                <label className="block text-sm font-body font-medium text-foreground mb-2">Trading Pair</label>
-                <select name="pair" value={form.pair} onChange={handleChange} required className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-accent">
+                <label className="block text-sm font-body font-bold text-foreground mb-3">Trading Pair</label>
+                <select name="pair" value={form.pair} onChange={handleChange} required className="w-full px-5 py-4 rounded-xl bg-white/50 border border-border text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-accent backdrop-blur-md transition-all appearance-none cursor-pointer">
                   <option value="">Select pair</option>
                   <option value="XAUUSD">XAUUSD (Gold)</option>
                   <option value="EURUSD">EURUSD</option>
@@ -55,8 +60,8 @@ const DropYourIdea = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-body font-medium text-foreground mb-2">Timeframe</label>
-                <select name="timeframe" value={form.timeframe} onChange={handleChange} required className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-accent">
+                <label className="block text-sm font-body font-bold text-foreground mb-3">Timeframe</label>
+                <select name="timeframe" value={form.timeframe} onChange={handleChange} required className="w-full px-5 py-4 rounded-xl bg-white/50 border border-border text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-accent backdrop-blur-md transition-all appearance-none cursor-pointer">
                   <option value="">Select timeframe</option>
                   <option value="M1">M1</option>
                   <option value="M5">M5</option>
@@ -73,8 +78,8 @@ const DropYourIdea = () => {
             <TextAreaField label="Risk Management" name="risk" value={form.risk} onChange={handleChange} placeholder="Lot size, max drawdown, position limits..." />
             <TextAreaField label="Extra Notes" name="notes" value={form.notes} onChange={handleChange} placeholder="Any additional details about your strategy..." />
 
-            <Button type="submit" variant="hero" size="lg" className="w-full">
-              <Send size={18} /> Submit Idea via WhatsApp
+            <Button type="submit" variant="hero" size="xl" className="w-full shadow-brand shadow-[0_0_30px_rgba(168,85,247,0.3)] animate-float">
+              <Send size={20} className="mr-2" /> Submit Idea via WhatsApp
             </Button>
           </motion.form>
         </div>
@@ -87,8 +92,8 @@ const InputField = ({ label, name, type = "text", value, onChange, placeholder, 
   label: string; name: string; type?: string; value: string; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; placeholder: string; required?: boolean;
 }) => (
   <div>
-    <label className="block text-sm font-body font-medium text-foreground mb-2">{label}</label>
-    <input type={type} name={name} value={value} onChange={onChange} placeholder={placeholder} required={required} className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-muted-foreground" />
+    <label className="block text-sm font-body font-bold text-foreground mb-3">{label}</label>
+    <input type={type} name={name} value={value} onChange={onChange} placeholder={placeholder} required={required} className="w-full px-5 py-4 rounded-xl bg-white/50 border border-border text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-muted-foreground/50 backdrop-blur-md transition-all" />
   </div>
 );
 
@@ -96,8 +101,8 @@ const TextAreaField = ({ label, name, value, onChange, placeholder, required = f
   label: string; name: string; value: string; onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void; placeholder: string; required?: boolean;
 }) => (
   <div>
-    <label className="block text-sm font-body font-medium text-foreground mb-2">{label}</label>
-    <textarea name={name} value={value} onChange={onChange} placeholder={placeholder} required={required} rows={3} className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-muted-foreground resize-none" />
+    <label className="block text-sm font-body font-bold text-foreground mb-3">{label}</label>
+    <textarea name={name} value={value} onChange={onChange} placeholder={placeholder} required={required} rows={4} className="w-full px-5 py-4 rounded-xl bg-white/50 border border-border text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-muted-foreground/50 resize-none backdrop-blur-md transition-all" />
   </div>
 );
 

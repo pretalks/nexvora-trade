@@ -45,7 +45,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-heading font-semibold text-foreground text-sm">WhatsApp</p>
-                      <p className="text-muted-foreground font-body text-sm">+91 8141517483</p>
+                      <p className="text-muted-foreground font-body text-sm">+91 90980 64667</p>
                     </div>
                   </a>
                   <a href="mailto:contact@tradigo.com" className="flex items-center gap-4 glass-card p-5 hover:shadow-brand transition-all duration-300">
@@ -107,7 +107,7 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder={field.placeholder}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-muted-foreground"
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-body text-sm focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-white/30 backdrop-blur-sm"
                   />
                 </div>
               ))}
@@ -120,7 +120,7 @@ const Contact = () => {
                   placeholder="How can we help you?"
                   required
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-muted-foreground resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-body text-sm focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-white/30 resize-none backdrop-blur-sm"
                 />
               </div>
               <Button type="submit" variant="hero" size="lg" className="w-full">
