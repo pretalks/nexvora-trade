@@ -6,20 +6,20 @@
 
 const LINK_CONFIG = {
   whatsapp: {
-    primary: "https://wa.me/918141517483",
-    fallback: "https://web.whatsapp.com/send?phone=918141517483",
+    primary: "https://wa.me/919098064667",
+    fallback: "https://web.whatsapp.com/send?phone=919098064667",
   },
   facebook: {
     primary: "https://www.facebook.com/share/1GEgkEY4fW/",
     fallback: "https://m.facebook.com/share/1GEgkEY4fW/",
   },
   instagram: {
-    primary: "https://www.instagram.com/xtrendedutech/",
-    fallback: "https://m.instagram.com/xtrendedutech/",
+    primary: "https://www.instagram.com/tradigo/",
+    fallback: "https://m.instagram.com/tradigo/",
   },
   telegram: {
-    primary: "https://t.me/xtrendet",
-    fallback: "https://t.me/xtrendet",
+    primary: "https://t.me/tradigo",
+    fallback: "https://t.me/tradigo",
   },
 } as const;
 

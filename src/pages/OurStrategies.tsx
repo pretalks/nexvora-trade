@@ -50,35 +50,40 @@ const strategies = [
 const OurStrategies = () => {
   return (
     <Layout>
-      <section className="pt-32 pb-8 md:pt-40 bg-muted/30">
-        <div className="container-custom px-4 md:px-8">
+      <section className="pt-32 pb-8 md:pt-48 md:pb-16 gradient-gold-soft relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+        <div className="container-custom px-4 md:px-8 relative z-10">
           <SectionHeading badge="Our Strategies" title="Battle-Tested Trading Strategies" subtitle="Each strategy is developed, backtested, and optimized by our team of expert traders and developers." />
         </div>
       </section>
 
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-[#FDFBF7] relative overflow-hidden">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {strategies.map((s, i) => (
               <motion.div
                 key={s.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="glass-card-elevated overflow-hidden group hover:shadow-gold transition-all duration-300 flex flex-col"
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                className="glass-card-elevated overflow-hidden group hover:shadow-brand transition-all duration-500 flex flex-col glow-border"
               >
-                <div className="h-48 overflow-hidden">
-                  <img src={s.image} alt={s.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="h-56 overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <img src={s.image} alt={s.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 </div>
                 <div className="p-8 flex flex-col flex-1">
-                  <h3 className="text-xl font-heading font-semibold text-foreground mb-3">{s.name}</h3>
-                  <p className="text-muted-foreground font-body text-sm leading-relaxed mb-4 flex-1">{s.desc}</p>
-                  <div className="space-y-2 mb-5">
-                    <p className="text-xs font-body font-semibold text-success">{s.performance}</p>
-                    <p className="text-xs font-body text-muted-foreground">Pairs: {s.pairs}</p>
+                  <h3 className="text-2xl font-heading font-bold text-foreground mb-4">{s.name}</h3>
+                  <p className="text-muted-foreground font-body text-sm leading-relaxed mb-6 flex-1">{s.desc}</p>
+                  <div className="space-y-3 mb-8 p-4 bg-accent/5 rounded-xl border border-accent/10">
+                    <p className="text-sm font-body font-bold text-success flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+                      {s.performance}
+                    </p>
+                    <p className="text-xs font-body text-muted-foreground font-medium uppercase tracking-wider">Pairs: {s.pairs}</p>
                   </div>
-                  <Button variant="gold" size="sm" className="w-full" asChild>
+                  <Button variant="gold" size="lg" className="w-full shadow-gold" asChild>
                     <Link to="/drop-your-idea">Get This Strategy as EA</Link>
                   </Button>
                 </div>
@@ -89,12 +94,15 @@ const OurStrategies = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding gradient-navy text-center">
-        <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">Have a Custom Strategy?</h2>
-            <p className="text-primary-foreground/70 font-body text-lg mb-8 max-w-xl mx-auto">We can build any trading strategy into a professional Expert Advisor. Share your idea today.</p>
-            <Button variant="hero" size="lg" asChild>
+      <section className="section-padding gradient-indigo text-center relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        <div className="container-custom relative z-10">
+          <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">Have a Custom Strategy?</h2>
+            <p className="text-muted-foreground font-body text-xl md:text-2xl mb-12 max-w-2xl mx-auto leading-relaxed">
+              We can build any trading strategy into a professional Expert Advisor. Share your vision today.
+            </p>
+            <Button variant="hero" size="xl" className="shadow-brand animate-float" asChild>
               <Link to="/drop-your-idea">Submit Your Custom Strategy</Link>
             </Button>
           </motion.div>

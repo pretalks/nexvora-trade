@@ -51,7 +51,7 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
   }, [started, target]);
 
   return (
-    <div ref={ref} className="text-4xl md:text-5xl font-heading font-bold text-gradient-gold">
+    <div ref={ref} className="text-4xl md:text-5xl font-heading font-bold text-gradient-brand">
       {count}{suffix}
     </div>
   );
@@ -59,20 +59,26 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
 
 const StatsCounter = () => {
   return (
-    <section className="section-padding bg-primary">
-      <div className="container-custom">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <section className="section-padding bg-[#E6DBF5] relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/carbon-fibre.png')" }} />
+      <div className="container-custom relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="text-center"
+              transition={{ delay: i * 0.1, duration: 0.6 }}
+              className="rounded-2xl p-[1px] bg-gradient-to-r from-primary to-accent group hover:-translate-y-2 transition-all duration-500 shadow-lg"
             >
-              <Counter target={stat.value} suffix={stat.suffix} />
-              <p className="mt-2 text-primary-foreground/70 font-body text-sm md:text-base">{stat.label}</p>
+              <div className="bg-[#F8F6FC] backdrop-blur-2xl rounded-[15px] p-8 text-center h-full relative overflow-hidden">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-accent/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <Counter target={stat.value} suffix={stat.suffix} />
+                  <p className="mt-3 text-muted-foreground font-body text-sm md:text-base font-semibold tracking-wide uppercase">{stat.label}</p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
