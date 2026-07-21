@@ -17,6 +17,9 @@ import vantageLogo from "@/assets/broker-vantage.png";
 import startraderLogo from "@/assets/broker-startrader.png";
 import vtmarketsLogo from "@/assets/broker-vtmarkets.png";
 import forex4youLogo from "@/assets/broker-forex4you.png";
+import ecmarketsLogo from "@/assets/broker-ecmarkets.png";
+import cxmLogo from "@/assets/cxm.png";
+import defaultLogo from "@/assets/logo.png";
 
 /* ── Animated Counter ── */
 const AnimatedCounter = ({ target, prefix = "", suffix = "" }: { target: number; prefix?: string; suffix?: string }) => {
@@ -93,6 +96,18 @@ const brokers = [
     url: "https://account.markets4you.online/en/user-registration/?affid=nztufqq",
     color: "from-[hsl(145,60%,35%)] to-[hsl(170,50%,40%)]",
     logo: forex4youLogo,
+  },
+  {
+    name: "EC Markets",
+    url: "https://i.ecmarkets.com/api/client/pm/2/AP167",
+    color: "from-[hsl(210,60%,35%)] to-[hsl(210,50%,45%)]",
+    logo: ecmarketsLogo,
+  },
+  {
+    name: "CXM",
+    url: "https://secure.cxm.com/links/go/370336",
+    color: "from-[hsl(280,60%,35%)] to-[hsl(280,50%,45%)]",
+    logo: cxmLogo,
   },
 ];
 
